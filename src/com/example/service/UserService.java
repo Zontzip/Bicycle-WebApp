@@ -3,9 +3,7 @@ package com.example.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.business.Product;
 import com.example.business.User;
-import com.example.dao.ProductDao;
 import com.example.dao.UserDao;
 import com.example.exceptions.DaoException;
 
