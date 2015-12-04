@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 
-<body>
+<body bgcolor="#E6E6FA">
 	Servlet forwarded to me... loginSuccess.jsp
 	
 	<br/><br/>
@@ -26,9 +26,9 @@
          <input type="submit" value="List Users" />
     </form>
     <form action="FrontController" method="post">
-	     <input type="hidden" name="action" value="ViewUserProfile" />
-         <input type="submit" value="View My Profile" />
-    </form>      
+	     <input type="hidden" name="action" value="ListProducts" />
+         <input type="submit" value="List all products" />
+    </form>         
 		
 </body>
 

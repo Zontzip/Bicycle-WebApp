@@ -22,7 +22,7 @@ public class UserDao extends Dao {
         try {
             con = this.getConnection();
             
-            String query = "SELECT * FROM USER WHERE USERNAME = ? AND PASSWORD = ?";
+            String query = "SELECT * FROM USERS WHERE USERNAME = ? AND PASSWORD = ?";
             ps = con.prepareStatement(query);
             ps.setString(1, uname);
             ps.setString(2, pword);
@@ -65,7 +65,7 @@ public class UserDao extends Dao {
         try {
             con = this.getConnection();
             
-            String query = "SELECT * FROM USER";
+            String query = "SELECT * FROM USERS";
             ps = con.prepareStatement(query);
             
             rs = ps.executeQuery();
@@ -76,6 +76,7 @@ public class UserDao extends Dao {
                 String lastname = rs.getString("LAST_NAME");
                 String firstname = rs.getString("FIRST_NAME");
                 u = new User(userId, firstname, lastname, username, password);
+                users.add(u);
             }
         } catch (SQLException e) {
             throw new DaoException("findUserByUsernamePassword " + e.getMessage());
@@ -94,8 +95,6 @@ public class UserDao extends Dao {
                 throw new DaoException("findUserByUsernamePassword" + e.getMessage());
             }
         }
-        
-        System.out.println("Test");
         return users;     // u may be null 
     }
    
