@@ -21,6 +21,10 @@ public class ShoppingCart {
 	public void removeProduct(Product product) {
 		cartList.remove(product);
 	}
+	
+	public List<Product> cartContents() {
+		return cartList;
+	}
 
 	public int getProductCount() {
 		return productCount;

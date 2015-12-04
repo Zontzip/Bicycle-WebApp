@@ -3,7 +3,7 @@ package com.example.business;
 import java.io.Serializable;
 
 public class User implements Serializable{
-
+	ShoppingCart shoppingCart = new ShoppingCart(this);
 
 	private static final long serialVersionUID = 1L;
 	private int id;
@@ -11,7 +11,6 @@ public class User implements Serializable{
 	private String lastName;
 	private String username;
 	private String password;
-	
 	
 	public User(int userId, String firstName, String lastName,
 			String username, String password) {
@@ -63,4 +62,7 @@ public class User implements Serializable{
 		this.password = password;
 	}
 	
+	public ShoppingCart getShoppingCart() {
+		return this.shoppingCart;
+	}
 }
