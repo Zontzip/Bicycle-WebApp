@@ -8,18 +8,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.example.business.Product;
-import com.example.service.UserService;
+import com.example.service.ProductService;
 
 public class ListProductsCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		UserService userService = new UserService();
+		ProductService productService = new ProductService();
 		String forwardToJsp = "";
 		
 		List<Product> products = new ArrayList<Product>();
 		
-		products = userService.getAllProducts();
+		products = productService.getAllProducts();
 		
 		if (products != null) {
 			HttpSession session = request.getSession();

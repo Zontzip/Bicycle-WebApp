@@ -11,14 +11,13 @@ import com.example.exceptions.DaoException;
 
 public class UserService {
 
-	UserDao userDao = new UserDao();
-	ProductDao bicycleDao = new ProductDao();
+	UserDao dao = new UserDao();
 	
 	public User login(String username, String password){
 		
 		User u = null;
 		try {			
-			u = userDao.findUserByUsernamePassword(username, password);
+			u = dao.findUserByUsernamePassword(username, password);
 		} 
 		catch (DaoException e) {
 			e.printStackTrace();
@@ -31,23 +30,11 @@ public class UserService {
 		List<User> users = new ArrayList<User>();
 		
 		try {
-			users = userDao.getAllUsers();
+			users = dao.getAllUsers();
 		} 
 		catch (DaoException e) {
 			e.printStackTrace();
 		}
 		return users;
 	}
-	
-	public List<Product> getAllProducts() {
-		List<Product> products = new ArrayList<Product>();
-		
-		try {
-			products = bicycleDao.getAllProducts();
-		} catch (DaoException e) {
-			e.printStackTrace();
-		}
-		return products;
-	}
-	
 }
