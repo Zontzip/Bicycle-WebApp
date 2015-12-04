@@ -1,12 +1,14 @@
 package com.example.business;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private int productId;
 	private String productName;
 	private String productDescription;
 	private int productPrice;
 	
-
 	public Product(int productId, String productName, String productDescription, int productPrice) {
 		setProductId(productId);
 		setProductName(productName);

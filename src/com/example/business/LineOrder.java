@@ -1,32 +1,36 @@
 package com.example.business;
 
 public class LineOrder {
-	private int lineOrderId;
-	private int productId;
+	private Product product;
+	
 	private int productQuantity;
 	private int linePrice;
 	
-	public int getLineOrderId() {
-		return lineOrderId;
+	public LineOrder(Product product, int productQuantity) {
+		setProduct(product);
+		setProductQuantity(productQuantity);
 	}
-	public void setLineOrderId(int lineOrderId) {
-		this.lineOrderId = lineOrderId;
+	
+	public void setProduct(Product product) {
+		this.product = product;
 	}
-	public int getProductId() {
-		return productId;
+	
+	public Product getProduct() {
+		return product;
 	}
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
-	public int getProductQuantity() {
-		return productQuantity;
-	}
+	
 	public void setProductQuantity(int productQuantity) {
 		this.productQuantity = productQuantity;
 	}
+
+	public int getProductQuantity() {
+		return productQuantity;
+	}
+	
 	public int getLinePrice() {
 		return linePrice;
 	}
+	
 	public void setLinePrice(int linePrice) {
 		this.linePrice = linePrice;
 	}

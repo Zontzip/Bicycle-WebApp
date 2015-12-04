@@ -4,16 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
-	List<Product> cartList = new ArrayList<Product>();
-	User user;
-	
-	int productCount;
+	private User user;
+	private List<Product> cartList = new ArrayList<Product>();
 	
 	public ShoppingCart (User user){
-		this.user = user;
-		this.productCount = 0;
+		setUser(user);
 	}
 	
+	public User getUser() {
+		return user;
+	}
+	
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public void addProduct(Product product) {
 		cartList.add(product);
 	}
@@ -24,14 +29,6 @@ public class ShoppingCart {
 	
 	public List<Product> cartContents() {
 		return cartList;
-	}
-
-	public int getProductCount() {
-		return productCount;
-	}
-	
-	public void setProductCount(int productCount) {
-		this.productCount = cartList.size();
 	}
 
 	public int cartTotal() {

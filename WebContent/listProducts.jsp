@@ -70,7 +70,7 @@
 			<td><form action="FrontController" method="post">
 			   	<input type="hidden" name="action" value="RemoveFromCart" />
 				<input type="hidden" name="itemIndex" value="<%=cartContents.indexOf(p)%>" />	  	   
-				<input type="submit" value="Remove from Shopping Cart" /></form>
+				<input type="submit" value="Remove" /></form>
 			</td>
 		</tr>
 		<% } %>
