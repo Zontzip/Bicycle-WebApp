@@ -19,10 +19,10 @@ public class RemoveFromCartCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse repsonse){
-		user = (User) (request.getSession().getAttribute("user")); // Get current user
-		shoppingCart = user.getShoppingCart(); // Get user's shopping cart
-		int index = Integer.parseInt(request.getParameter("itemIndex")); // Get index of clicked item. Value is String
-		shoppingCart.cartContents().remove(index); // Remove item from that index
-		return "/listProducts.jsp"; // Forward back to same page
+		user = (User) (request.getSession().getAttribute("user"));
+		shoppingCart = user.getShoppingCart(); 
+		int index = Integer.parseInt(request.getParameter("itemIndex")); 
+		shoppingCart.cartContents().remove(index); 
+		return "/listProducts.jsp"; 
 	}
 }

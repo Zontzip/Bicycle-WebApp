@@ -26,10 +26,10 @@ public class ProductDao extends Dao {
         	
         	rs = ps.executeQuery();
         	while (rs.next()) {
-        		int productId = rs.getInt("ID");
-        		String productName = rs.getString("PRODUCTNAME");
-        		String productDescription = rs.getString("PRODUCTDESCRIPTION");
-        		int productPrice = rs.getInt("PRODUCTPRICE");
+        		int productId = rs.getInt("PRODUCT_CODE");
+        		String productName = rs.getString("PRODUCT_NAME");
+        		String productDescription = rs.getString("PRODUCT_DESCRIPTION");
+        		int productPrice = rs.getInt("PRODUCT_PRICE");
         		Product p = new Product(productId, productName, productDescription, productPrice);
         		products.add(p);
         	}
