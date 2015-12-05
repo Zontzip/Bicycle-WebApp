@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ShoppingCart {
 	private User user;
-	private List<Product> cartList = new ArrayList<Product>();
+	private List<CartItem> cartList = new ArrayList<CartItem>();
 	
 	public ShoppingCart (User user){
 		setUser(user);
@@ -19,22 +19,23 @@ public class ShoppingCart {
 		this.user = user;
 	}
 
-	public void addProduct(Product product) {
-		cartList.add(product);
+	public void addCartItem(CartItem cartItem) {
+		cartList.add(cartItem);
+		System.out.println("Cart item added to shopping cart");
 	}
 	
 	public void removeProduct(Product product) {
 		cartList.remove(product);
 	}
 	
-	public List<Product> cartContents() {
+	public List<CartItem> cartContents() {
 		return cartList;
 	}
 
 	public int cartTotal() {
 		int totalPrice = 0;
 		for(int i = 0; i < cartList.size(); i++) {
-			totalPrice += cartList.get(i).getProductPrice();
+			//totalPrice += cartList.get(i).getTotalPrice();
 		}
 		return totalPrice;
 	}

@@ -7,7 +7,11 @@ public class CartItem {
 	private int productQuantity;
 	
 	public CartItem(User customer, Product product, int productQuantity) {
+		setCustomer(customer);
+		setProduct(product);
 		setProductQuantity(productQuantity);
+		System.out.println("Cart item added");
+		product.toString();
 	}
 	
 	public User getCustomer() {
@@ -24,6 +28,7 @@ public class CartItem {
 
 	public void setProduct(Product product) {
 		this.product = product;
+		product.toString();
 	}
 
 	public int getProductQuantity() {

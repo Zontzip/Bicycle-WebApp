@@ -9,6 +9,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="com.example.business.Product" %>
 <%@ page import="com.example.business.ShoppingCart" %>
+<%@ page import="com.example.business.CartItem" %>
 <%@ page import="com.example.business.User" %>
 	
 <html>
@@ -60,10 +61,12 @@
 		<% 
 		User user = (User) (request.getSession().getAttribute("user"));
 		ShoppingCart shoppingCart = user.getShoppingCart();
-		List<Product> cartContents = new ArrayList<Product>();
+		List<CartItem> cartContents = new ArrayList<CartItem>();
 		cartContents = shoppingCart.cartContents();
+		Product p;
 
-		for(Product p : cartContents) { %>
+		for(CartItem ci : cartContents) { 
+			p = (Product) ci.getProduct(); %>
 		<tr>
 			<td><%=p.getProductName()%></td>
 			<td><%=p.getProductDescription()%></td>	 

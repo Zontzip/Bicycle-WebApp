@@ -6,7 +6,6 @@ import javax.servlet.http.HttpSession;
 
 import com.example.business.User;
 import com.example.service.UserService;
-import com.example.business.ShoppingCart;
 
 public class LoginUserCommand implements Command {
 
@@ -24,8 +23,6 @@ public class LoginUserCommand implements Command {
 
 			//Make call to the 'Model' using the UserServive class to login...
 			User userLoggingIn = userService.login(username, password);
-			
-			ShoppingCart shoppingCart = new ShoppingCart(userLoggingIn);
 
 			if (userLoggingIn != null){
 
@@ -35,9 +32,6 @@ public class LoginUserCommand implements Command {
 				session.setAttribute("loggedSessionId", clientSessionId);
 
 				session.setAttribute("user", userLoggingIn);
-				
-				// Give the user a shopping cart
-				session.setAttribute("shoppingcart", shoppingCart);
 
 				forwardToJsp = "/loginSuccess.jsp";				
 			}
