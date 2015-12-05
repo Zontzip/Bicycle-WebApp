@@ -65,12 +65,12 @@ public class UserDao extends Dao {
         try {
             con = this.getConnection();
             
-            String query = "SELECT * FROM USERS";
+            String query = "SELECT * FROM CUSTOMERS";
             ps = con.prepareStatement(query);
             
             rs = ps.executeQuery();
             while (rs.next()) {
-            	int userId = rs.getInt("ID");
+            	int userId = rs.getInt("CUSTOMER_ID");
                 String username = rs.getString("USERNAME");
                 String password = rs.getString("PASSWORD");
                 String lastname = rs.getString("LAST_NAME");
