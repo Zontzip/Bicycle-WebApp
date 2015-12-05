@@ -22,13 +22,13 @@ public class AddToCartCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		int index = Integer.parseInt(request.getParameter("itemIndex")); 
+		int quantity = Integer.parseInt(request.getParameter("quantity")); 
 		
 		user = (User) (request.getSession().getAttribute("user"));
 		products = (List) (request.getSession().getAttribute("products"));
 		product = products.get(index);
-		//System.out.println(product.toString());
 		shoppingCart = user.getShoppingCart(); 
-		cartItem = new CartItem(user, product, 1);
+		cartItem = new CartItem(user, product, quantity);
 		shoppingCart.addCartItem(cartItem); 
 		String forwardToJsp = "/listProducts.jsp";
 		return forwardToJsp;

@@ -25,6 +25,7 @@
 		<td><b>Name</b></td>
 		<td><b>Description</b></td>
 		<td><b>Price</b></td>
+		<td><b>Quantity</b></td>
 		</tr>
 		
 		<%
@@ -37,11 +38,11 @@
 				<td><%=p.getProductName()%></td>
 				<td><%=p.getProductDescription()%></td>
 				<td><%=p.getProductPrice()%> Euro</td>
-				<td><input type = "text" name = "quantity" maxlength = "2" size = "1"></td>
 				<td><form action="FrontController" method="post">
+					<input type="text" name = "quantity" maxlength = "2" size = "1">
 				    <input type="hidden" name="action" value="AddToCart" />
 				    <input type="hidden" name="itemIndex" value="<%=products.indexOf(p)%>" />
-				<input type="submit" value="Add to Cart" />
+					<input type="submit" value="Add to Cart" />
 	 			</form></td>
 			</tr>	
 			<% 
@@ -56,6 +57,7 @@
 		<td>Name</td>
 		<td>Description</td>
 		<td>Price</td>
+		<td>Quantity</td>
 		</tr>	
 		
 		<% 
@@ -71,6 +73,7 @@
 			<td><%=p.getProductName()%></td>
 			<td><%=p.getProductDescription()%></td>	 
 			<td><%=p.getProductPrice()%> Euro</td>
+			<td><%=ci.getProductQuantity()%></td>
 			<td><form action="FrontController" method="post">
 			   	<input type="hidden" name="action" value="RemoveFromCart" />
 				<input type="hidden" name="itemIndex" value="<%=cartContents.indexOf(ci)%>" />	  	   
