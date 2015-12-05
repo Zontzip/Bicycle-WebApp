@@ -48,3 +48,6 @@ INSERT INTO Products VALUES
   (null, "Dolan Fixed Gear", "75 inch gear ratio, great for the velodrome", 500),
   (null, "Cannondale Mountain Bike", "Old school mountain bike for muddy conditions", 600),
   (null, "Shimano Pedals", "Japanese made pedals for increased efficiency", 20);
+
+INSERT INTO Orders VALUES
+  (null, 1, "5-12-2015", "Completed");

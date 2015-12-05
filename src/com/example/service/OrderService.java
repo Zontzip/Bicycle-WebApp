@@ -10,7 +10,7 @@ import com.example.exceptions.DaoException;
 public class OrderService {
 	OrderDao dao = new OrderDao();
 	
-	public List<Order> getAllUsers() {
+	public List<Order> getAllOrders() {
 		List<Order> orders = new ArrayList<Order>();
 		
 		try {

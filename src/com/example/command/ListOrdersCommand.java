@@ -7,25 +7,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.example.business.Product;
-import com.example.service.ProductService;
+import com.example.business.Order;
+import com.example.service.OrderService;
 
-public class ListProductsCommand implements Command {
-
+public class ListOrdersCommand implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		ProductService productService = new ProductService();
+		OrderService orderService = new OrderService();
 		String forwardToJsp = "";
 		
-		List<Product> products = new ArrayList<Product>();
+		List<Order> orders = new ArrayList<Order>();
 		
-		products = productService.getAllProducts();
+		orders = orderService.getAllOrders();
 		
-		if (products != null) {
+		if (orders != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("products", products);
+			session.setAttribute("orders", orders);
 			
-			forwardToJsp = "/listProducts.jsp";
+			forwardToJsp = "/listOrders.jsp";
 		} else {
 			forwardToJsp = "/errorPage.jsp";	
 		}
