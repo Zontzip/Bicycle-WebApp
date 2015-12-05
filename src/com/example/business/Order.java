@@ -1,18 +1,20 @@
 package com.example.business;
 
-public class Orders {
+public class Order {
 	Customer customer;
 	
 	int orderId;
+	int customerId;
 	String orderDate;
 	String orderStatus;
 	
-	public Orders(Customer customer) {
+	public Order(Customer customer) {
 		setCustomer(customer);
 	}
 	
-	public Orders(int orderId, String orderDate, String orderStatus) {
+	public Order(int orderId, int customerId, String orderDate, String orderStatus) {
 		setOrderId(orderId);
+		setCustomerId(customerId);
 		setOrderDate(orderDate);
 		setOrderStatus(orderStatus);
 	}
@@ -33,6 +35,14 @@ public class Orders {
 		this.orderId = orderId;
 	}
 	
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
 	public String getOrderDate() {
 		return orderDate;
 	}
