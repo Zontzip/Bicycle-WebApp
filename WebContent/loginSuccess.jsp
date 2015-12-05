@@ -39,6 +39,13 @@
 	    
 	    <br/><br/>
 	    
+	    <form action="FrontController" method="post">
+		     <input type="hidden" name="action" value="ListOrders" />
+	         <input type="submit" value="View Orders" />
+	    </form> 
+	    
+	    <br/><br/>
+	    
 	    <form action="login.html" method="post">
 	         <input type="submit" value="Sign Out" />
 	    </form> 
