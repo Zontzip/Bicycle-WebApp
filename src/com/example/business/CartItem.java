@@ -8,9 +8,9 @@ public class CartItem {
 	private int productId;
 	private int productQuantity;
 	
-	public CartItem(int customerId, int productName, int productQuantity) {
+	public CartItem(int customerId, int productId, int productQuantity) {
 		setCustomerId(customerId);
-		setProductName(productName);
+		setProductId(productId);
 		setProductQuantity(productQuantity);
 	}
 	
@@ -29,7 +29,7 @@ public class CartItem {
 	
 	public void setProduct(Product product) {
 		this.product = product;
-		setProductName(product.getProductId());
+		setProductId(product.getProductId());
 	}
 
 	public int getCustomerId() {
@@ -40,11 +40,11 @@ public class CartItem {
 		this.customerId = customerId;
 	}
 	
-	public int getProductName() {
+	public int getProductId() {
 		return productId;
 	}
 	
-	public void setProductName(int productName) {
+	public void setProductId(int productName) {
 		this.productId = productName;
 	}
 	
