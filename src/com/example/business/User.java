@@ -1,11 +1,8 @@
 package com.example.business;
 
-import java.io.Serializable;
-
-public class User implements Serializable {
+public class User {
 	private ShoppingCart shoppingCart = new ShoppingCart(this);
 
-	private static final long serialVersionUID = 1L;
 	private int id;
 	private String firstName;
 	private String lastName;
