@@ -20,22 +20,6 @@ CREATE TABLE IF NOT EXISTS `Products` (
   PRIMARY KEY (`Product_Code`)
   );
 
-CREATE TABLE IF NOT EXISTS `CartItems` (
-  `Product_Code` int(11) NOT NULL AUTO_INCREMENT,
-  `Product_Name` varchar(50) NOT NULL,
-  `Product_Description` varchar(100) NOT NULL,
-  `Product_Price` int(5) NOT NULL,
-  PRIMARY KEY (`Product_Code`)
-  );
-
-CREATE TABLE IF NOT EXISTS `Orders` (
-  `Product_Code` int(11) NOT NULL AUTO_INCREMENT,
-  `Product_Name` varchar(50) NOT NULL,
-  `Product_Description` varchar(100) NOT NULL,
-  `Product_Price` int(5) NOT NULL,
-  PRIMARY KEY (`Product_Code`)
-  );
-
 INSERT INTO Customers VALUES 
   (null, "Alex",  "Kiernan",  "admin",  "pass"),
   (null, "Rian",  "Jolley",   "jolz",   "pass"),
