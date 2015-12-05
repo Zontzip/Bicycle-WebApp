@@ -11,7 +11,7 @@ public class CartItemService {
 	
 	CartItemDao dao = new CartItemDao();
 	
-	public List<CartItem> getAllCartitems() {
+	public List<CartItem> getAllCartItems() {
 		List<CartItem> cartItems = new ArrayList<CartItem>();
 		try {
 			cartItems = dao.getAllCartItems();
