@@ -73,7 +73,7 @@
 			<td><%=p.getProductPrice()%> Euro</td>
 			<td><form action="FrontController" method="post">
 			   	<input type="hidden" name="action" value="RemoveFromCart" />
-				<input type="hidden" name="itemIndex" value="<%=cartContents.indexOf(p)%>" />	  	   
+				<input type="hidden" name="itemIndex" value="<%=cartContents.indexOf(ci)%>" />	  	   
 				<input type="submit" value="Remove" /></form>
 			</td>
 		</tr>

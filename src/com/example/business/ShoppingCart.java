@@ -24,7 +24,7 @@ public class ShoppingCart {
 		System.out.println("Cart item added to shopping cart");
 	}
 	
-	public void removeProduct(Product product) {
+	public void removeCartItem(Product product) {
 		cartList.remove(product);
 	}
 	
