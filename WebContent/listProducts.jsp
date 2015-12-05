@@ -56,39 +56,44 @@
 			}
 			%>
 		</table>
-			
-		<h1>Shopping Cart</h1>
-		<table>  
-			<tr>
-			<td><b>Name</b></td>
-			<td><b>Description</b></td>
-			<td><b>Price</b></td>
-			<td><b>Quantity</b></td>
-			</tr>	
-			
-			<% 
-			Customer customer = (Customer) (request.getSession().getAttribute("customer"));
-			ShoppingCart shoppingCart = customer.getShoppingCart();
-			List<CartItem> cartContents = new ArrayList<CartItem>();
-			cartContents = shoppingCart.cartContents();
-			Product p;
-			// Iterate through item lines in cart, for each item line get item and quantity
-			for(CartItem ci : cartContents) { 
-				p = (Product) ci.getProduct(); %>
+		
+		<br><br>
+		
+		<div id = "shoppingcart">
+			<h1>Shopping Cart</h1>
+			<table>  
 				<tr>
-					<td><%=p.getProductName()%></td>
-					<td><%=p.getProductDescription()%></td>	 
-					<td><%=p.getProductPrice()%> Euro</td>
-					<td style="text-align:center;"><%=ci.getProductQuantity()%></td>
-					<td><form action="FrontController" method="post">
-					   	<input type="hidden" name="action" value="RemoveFromCart" />
-						<input type="hidden" name="itemIndex" value="<%=cartContents.indexOf(ci)%>" />	  	   
-						<input type="submit" value="Remove" /></form>
-					</td>
-				</tr>
-			<% } %>
-			<tr><td><b>Total price: </b><%=shoppingCart.cartTotal()%> Euro</td></tr>
-		</table>
+				<td><b>Name</b></td>
+				<td><b>Description</b></td>
+				<td><b>Price</b></td>
+				<td><b>Quantity</b></td>
+				</tr>	
+				
+				<% 
+				Customer customer = (Customer) (request.getSession().getAttribute("customer"));
+				ShoppingCart shoppingCart = customer.getShoppingCart();
+				List<CartItem> cartContents = new ArrayList<CartItem>();
+				cartContents = shoppingCart.cartContents();
+				Product p;
+				// Iterate through item lines in cart, for each item line get item and quantity
+				for(CartItem ci : cartContents) { 
+					p = (Product) ci.getProduct(); %>
+					<tr>
+						<td><%=p.getProductName()%></td>
+						<td><%=p.getProductDescription()%></td>	 
+						<td><%=p.getProductPrice()%> Euro</td>
+						<td style="text-align:center;"><%=ci.getProductQuantity()%></td>
+						<td><form action="FrontController" method="post">
+						   	<input type="hidden" name="action" value="RemoveFromCart" />
+							<input type="hidden" name="itemIndex" value="<%=cartContents.indexOf(ci)%>" />	  	   
+							<input type="submit" value="Remove" /></form>
+						</td>
+					</tr>
+				<% } %>
+				<tr><td><b>Total price: </b><%=shoppingCart.cartTotal()%> Euro</td></tr>
+			</table>
+		</div>
+		
 	</div>
 </body>
 </html>
