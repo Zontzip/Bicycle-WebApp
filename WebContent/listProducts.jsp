@@ -60,7 +60,7 @@
 		<br><br>
 		
 		<div id = "shoppingcart">
-			<h1>Shopping Cart</h1>
+			<h2>Shopping Cart</h2>
 			<table>  
 				<tr>
 				<td><b>Name</b></td>
@@ -90,8 +90,8 @@
 						</td>
 					</tr>
 				<% } %>
-				<tr><td><b>Total price: </b><%=shoppingCart.cartTotal()%> Euro</td></tr>
 			</table>
+			<br><b>Total price: </b><%=shoppingCart.cartTotal()%> Euro
 		</div>
 		
 	</div>
