@@ -21,7 +21,6 @@ public class ShoppingCart {
 
 	public void addCartItem(CartItem cartItem) {
 		cartList.add(cartItem);
-		System.out.println("Cart item added to shopping cart");
 	}
 	
 	public void removeCartItem(Product product) {
@@ -35,7 +34,7 @@ public class ShoppingCart {
 	public int cartTotal() {
 		int totalPrice = 0;
 		for(int i = 0; i < cartList.size(); i++) {
-			//totalPrice += cartList.get(i).getTotalPrice();
+			totalPrice += cartList.get(i).getCartItemTotal();
 		}
 		return totalPrice;
 	}

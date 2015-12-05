@@ -39,7 +39,7 @@
 				<td><%=p.getProductDescription()%></td>
 				<td><%=p.getProductPrice()%> Euro</td>
 				<td><form action="FrontController" method="post">
-					<input type="text" name = "quantity" maxlength = "2" size = "1">
+					<input type="text" name = "quantity" maxlength = "2" size = "1" value = "0">
 				    <input type="hidden" name="action" value="AddToCart" />
 				    <input type="hidden" name="itemIndex" value="<%=products.indexOf(p)%>" />
 					<input type="submit" value="Add to Cart" />
