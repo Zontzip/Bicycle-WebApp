@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `ShoppingCarts` (
   );
 
 CREATE TABLE IF NOT EXISTS `Products` (
-  `Product_Code` int(11) NOT NULL AUTO_INCREMENT,
+  `Product_Code` int(11) NOT NULL,
   `Product_Name` varchar(50) NOT NULL,
   `Product_Description` varchar(100) NOT NULL,
   `Product_Price` int(5) NOT NULL,
@@ -28,10 +28,10 @@ CREATE TABLE IF NOT EXISTS `Products` (
   );
 
 CREATE TABLE IF NOT EXISTS `CartItems` (
-  `Customer_Id` int(11) NOT NULL,
+  `Cart_Id` int(11) NOT NULL,
   `Product_Code` int(11) NOT NULL,
   `Product_Quantity` int(5) NOT NULL,
-  FOREIGN KEY (`Customer_Id`) REFERENCES Customers(`Customer_Id`),
+  FOREIGN KEY (`Cart_Id`) REFERENCES ShoppingCarts(`Cart_Id`),
   FOREIGN KEY (`Product_Code`) REFERENCES Products(`Product_Code`)
   );
 
@@ -48,5 +48,8 @@ INSERT INTO ShoppingCarts VALUES
   (null, 4);
 
 INSERT INTO Products VALUES
-  (null, "Raleigh Road Bike", "11 speed road bike, perfect for commuting", 750),
-  (null, "Dolan Fixed Gear", "75 inch gear ratio, great for the velodrome", 500);
+  (3425, "Raleigh Road Bike", "11 speed road bike, perfect for commuting", 750),
+  (6353, "Dolan Fixed Gear", "75 inch gear ratio, great for the velodrome", 500);
+
+INSERT INTO CartItems VALUES
+  (1, 3425, 1);
