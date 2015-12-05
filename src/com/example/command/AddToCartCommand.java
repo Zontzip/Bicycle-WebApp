@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 import com.example.business.CartItem;
 import com.example.business.Product;
 import com.example.business.ShoppingCart;
-import com.example.business.User;
+import com.example.business.Customer;
 
 public class AddToCartCommand implements Command {
 	CartItem cartItem;
 	Product product;
 	ShoppingCart shoppingCart;
-	User user;
+	Customer customer;
 	List<Product> products = new ArrayList<Product>();
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
@@ -24,11 +24,11 @@ public class AddToCartCommand implements Command {
 		int index = Integer.parseInt(request.getParameter("itemIndex")); 
 		int quantity = Integer.parseInt(request.getParameter("quantity"));
 		
-		user = (User) (request.getSession().getAttribute("user"));
+		customer = (Customer) (request.getSession().getAttribute("customer"));
 		products = (List) (request.getSession().getAttribute("products"));
 		product = products.get(index);
-		shoppingCart = user.getShoppingCart(); 
-		cartItem = new CartItem(user, product, quantity);
+		shoppingCart = customer.getShoppingCart(); 
+		cartItem = new CartItem(customer, product, quantity);
 		shoppingCart.addCartItem(cartItem); 
 		String forwardToJsp = "/listProducts.jsp";
 		return forwardToJsp;

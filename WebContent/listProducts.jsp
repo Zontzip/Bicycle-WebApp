@@ -10,7 +10,7 @@
 <%@ page import="com.example.business.Product" %>
 <%@ page import="com.example.business.ShoppingCart" %>
 <%@ page import="com.example.business.CartItem" %>
-<%@ page import="com.example.business.User" %>
+<%@ page import="com.example.business.Customer" %>
 	
 <html>
 <head>
@@ -20,7 +20,12 @@
 </head>
 <body>
 	<div id = "Container">
-		<h1>Products</h1>
+		<h1 style="text-align:left;float:left;">Products</h1> 
+		<form action="loginSuccess.jsp" style="text-align:right;float:right;">
+			<input type="submit" value="Home">
+		</form>
+		<hr style="clear:both;"/>
+		
 		<table>
 			<tr>
 			<td><b>Name</b></td>
@@ -62,8 +67,8 @@
 			</tr>	
 			
 			<% 
-			User user = (User) (request.getSession().getAttribute("user"));
-			ShoppingCart shoppingCart = user.getShoppingCart();
+			Customer customer = (Customer) (request.getSession().getAttribute("customer"));
+			ShoppingCart shoppingCart = customer.getShoppingCart();
 			List<CartItem> cartContents = new ArrayList<CartItem>();
 			cartContents = shoppingCart.cartContents();
 			Product p;

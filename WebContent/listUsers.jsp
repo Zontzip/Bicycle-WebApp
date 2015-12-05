@@ -7,7 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@ page import="java.util.*" %>
-<%@ page import="com.example.business.User" %>
+<%@ page import="com.example.business.Customer" %>
 
 <html>
 
@@ -18,29 +18,37 @@
 </head>
 
 <body>
-	<table>
-	<%
-	List<User> users;
-	users = (List)(request.getSession().getAttribute("users"));
-	
-	if (users != null){
-	
-	  for (User u : users){ 
-	%>
-	
-		<tr>
-		  <td><%=u.getId()%></td>
-		  <td><%=u.getUsername()%></td>
-		  <td><%=u.getFirstName()%></td>
-		  <td><%=u.getLastName()%></td>
-		  <td><%=u.getPassword()%></td>
-		</tr>
-	
-	<% 
-	  }
-	}
-	%>
-	</table>
+	<div id = "container">
+		<h1 style="text-align:left;float:left;">Users</h1> 
+		<form action="loginSuccess.jsp" style="text-align:right;float:right;">
+			<input type="submit" value="Home">
+		</form>
+		<hr style="clear:both;"/>
+		
+		<table>
+		<%
+		List<Customer> customers;
+		customers = (List)(request.getSession().getAttribute("customers"));
+		
+		if (customers != null){
+		
+		  for (Customer c : customers){ 
+		%>
+		
+			<tr>
+			  <td><%=c.getId()%></td>
+			  <td><%=c.getUsername()%></td>
+			  <td><%=c.getFirstName()%></td>
+			  <td><%=c.getLastName()%></td>
+			  <td><%=c.getPassword()%></td>
+			</tr>
+		
+		<% 
+		  }
+		}
+		%>
+		</table>
+	</div>
 </body>
 
 </html>

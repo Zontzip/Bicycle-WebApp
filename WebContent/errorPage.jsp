@@ -9,7 +9,7 @@
 </head>
 <body>
 
-Oops... something went wrong, please talk to someone who knows something about this web app...
+This isn't right... :0
 
 </body>
 </html>

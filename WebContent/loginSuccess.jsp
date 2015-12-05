@@ -13,19 +13,21 @@
 
 <body>
 	<div id = "container">
-		<h1>Welcome</h1>
+		<h1 style="text-align:left;float:left;">Welcome</h1> 
+		<form action="loginSuccess.jsp" style="text-align:right;float:right;">
+			<input type="submit" value="Home">
+		</form>
+		<hr style="clear:both;"/>
 		
-		<br/><br/>
-		
-		<c:set var="user" value="${sessionScope.user}"/>
-		<b>Hello <c:out value="${user.firstName}"/>, you are now logged in...</b>
+		<c:set var="customer" value="${sessionScope.customer}"/>
+		<b>Hello <c:out value="${customer.firstName}"/>, you are now logged in...</b>
 		<b>What would like to do?</b>
 		
 		<br/><br/>
 		
 		<form action="FrontController" method="post">
-		     <input type="hidden" name="action" value="ListUsers" />
-	         <input type="submit" value="List Users" />
+		     <input type="hidden" name="action" value="ListCustomers" />
+	         <input type="submit" value="List Customers" />
 	    </form>
 	    
 	    <br/><br/>
@@ -33,6 +35,19 @@
 	    <form action="FrontController" method="post">
 		     <input type="hidden" name="action" value="ListProducts" />
 	         <input type="submit" value="View Products" />
+	    </form> 
+	    
+	    <br/><br/>
+	    
+	    <form action="FrontController" method="post">
+		     <input type="hidden" name="action" value="ListOrders" />
+	         <input type="submit" value="View Orders" />
+	    </form> 
+	    
+	    <br/><br/>
+	    
+	    <form action="login.html" method="post">
+	         <input type="submit" value="Sign Out" />
 	    </form> 
 	</div>        		
 </body>

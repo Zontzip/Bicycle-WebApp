@@ -4,17 +4,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.example.business.ShoppingCart;
-import com.example.business.User;
+import com.example.business.Customer;
 
 public class RemoveFromCartCommand implements Command {
 	
 	ShoppingCart shoppingCart;
-	User user;
+	Customer customer;
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse repsonse){
-		user = (User) (request.getSession().getAttribute("user"));
-		shoppingCart = user.getShoppingCart(); 
+		customer = (Customer) (request.getSession().getAttribute("customer"));
+		shoppingCart = customer.getShoppingCart(); 
 		int index = Integer.parseInt(request.getParameter("itemIndex")); 
 		shoppingCart.cartContents().remove(index); 
 		return "/listProducts.jsp"; 

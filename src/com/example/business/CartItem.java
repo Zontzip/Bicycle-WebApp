@@ -1,22 +1,22 @@
 package com.example.business;
 
 public class CartItem {
-	User customer;
+	Customer customer;
 	Product product;
 	
 	private int productQuantity;
 	
-	public CartItem(User customer, Product product, int productQuantity) {
+	public CartItem(Customer customer, Product product, int productQuantity) {
 		setCustomer(customer);
 		setProduct(product);
 		setProductQuantity(productQuantity);
 	}
 	
-	public User getCustomer() {
+	public Customer getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(User customer) {
+	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
 

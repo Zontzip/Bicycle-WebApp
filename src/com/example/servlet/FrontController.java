@@ -62,13 +62,13 @@ public class FrontController extends HttpServlet {
 		//Check if this is not a login request...
 		if ( !action.equalsIgnoreCase(LOGIN_ACTION) ){
 
-			//If not a login request then need to check that user is  
+			//If not a login request then need to check that customer is  
 			//logged in before processing ANY requests.
 			
 			//Check to see if the session id coming from the client matches the id stored at login...
 			HttpSession session = request.getSession();
 
-			//If user not logged in...
+			//If customer not logged in...
 			if ( session.getId() != session.getAttribute("loggedSessionId") ){
 				forwardToJsp = "/loginFailure.jsp";
 				forwardToPage(request, response, forwardToJsp);

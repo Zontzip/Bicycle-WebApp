@@ -1,6 +1,6 @@
 package com.example.business;
 
-public class User {
+public class Customer {
 	private ShoppingCart shoppingCart = new ShoppingCart(this);
 
 	private int id;
@@ -9,7 +9,7 @@ public class User {
 	private String username;
 	private String password;
 	
-	public User(int userId, String firstName, String lastName,
+	public Customer(int userId, String firstName, String lastName,
 			String username, String password) {
 		
 		setId(userId);

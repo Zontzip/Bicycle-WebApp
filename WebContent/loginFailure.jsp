@@ -10,10 +10,12 @@
 </head>
 
 <body>
-	Servlet forwarded to me... loginFailure.jsp
-	<br/>
-	<br/>	
-	<a href="login.html">Return to Login page...</a>
+	<div id = "container">
+		Username/Password not found
+		<br/>
+		<br/>	
+		<a href="login.html">Return to Login page...</a>
+	</div>
 </body>
 
 </html>

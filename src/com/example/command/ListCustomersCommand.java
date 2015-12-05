@@ -7,23 +7,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.example.business.User;
-import com.example.service.UserService;
+import com.example.business.Customer;
+import com.example.service.CustomerService;
 
-public class ListUsersCommand implements Command{
+public class ListCustomersCommand implements Command{
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse repsonse){
-		UserService userService = new UserService();
+		CustomerService userService = new CustomerService();
 		String forwardToJsp = "";
 		
-		List<User> users = new ArrayList<User>();
+		List<Customer> customers = new ArrayList<Customer>();
 		
-		users = userService.getAllUsers();
+		customers = userService.getAllUsers();
 		
-		if (users != null) {
+		if (customers != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("users", users);
+			session.setAttribute("customers", customers);
 			
 			forwardToJsp = "/listUsers.jsp";
 		} else {

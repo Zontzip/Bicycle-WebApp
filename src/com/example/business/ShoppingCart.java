@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
-	private User user;
+	private Customer user;
 	private List<CartItem> cartList = new ArrayList<CartItem>();
 	
-	public ShoppingCart (User user){
+	public ShoppingCart (Customer user){
 		setUser(user);
 	}
 	
-	public User getUser() {
+	public Customer getUser() {
 		return user;
 	}
 	
-	public void setUser(User user) {
+	public void setUser(Customer user) {
 		this.user = user;
 	}
 

@@ -7,18 +7,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.business.User;
+import com.example.business.Customer;
 import com.example.exceptions.DaoException;
 
 
-public class UserDao extends Dao {
+public class CustomerDao extends Dao {
 
-    public User findUserByUsernamePassword(String uname, String pword) throws DaoException {
+    public Customer findUserByUsernamePassword(String uname, String pword) throws DaoException {
 
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        User u = null;
+        Customer c = null;
         try {
             con = this.getConnection();
             
@@ -34,7 +34,7 @@ public class UserDao extends Dao {
                 String password = rs.getString("PASSWORD");
                 String lastname = rs.getString("LAST_NAME");
                 String firstname = rs.getString("FIRST_NAME");
-                u = new User(userId, firstname, lastname, username, password);
+                c = new Customer(userId, firstname, lastname, username, password);
             }
         } catch (SQLException e) {
             throw new DaoException("findUserByUsernamePassword " + e.getMessage());
@@ -53,15 +53,15 @@ public class UserDao extends Dao {
                 throw new DaoException("findUserByUsernamePassword" + e.getMessage());
             }
         }
-        return u;     // u may be null 
+        return c;     // u may be null 
     }
     
-    public List<User> getAllUsers() throws DaoException {
+    public List<Customer> getAllUsers() throws DaoException {
     	Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        User u = null;
-        List<User> users = new ArrayList<User>();
+        Customer c = null;
+        List<Customer> customers = new ArrayList<Customer>();
         try {
             con = this.getConnection();
             
@@ -75,8 +75,8 @@ public class UserDao extends Dao {
                 String password = rs.getString("PASSWORD");
                 String lastname = rs.getString("LAST_NAME");
                 String firstname = rs.getString("FIRST_NAME");
-                u = new User(userId, firstname, lastname, username, password);
-                users.add(u);
+                c = new Customer(userId, firstname, lastname, username, password);
+                customers.add(c);
             }
         } catch (SQLException e) {
             throw new DaoException("getAllUsers " + e.getMessage());
@@ -95,7 +95,7 @@ public class UserDao extends Dao {
                 throw new DaoException("getAllUsers" + e.getMessage());
             }
         }
-        return users;     // u may be null 
+        return customers;     // u may be null 
     }
    
 }
