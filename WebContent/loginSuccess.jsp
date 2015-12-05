@@ -6,30 +6,35 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Home Page</title>
 </head>
 
-<body bgcolor="#E6E6FA">
-	Servlet forwarded to me... loginSuccess.jsp
-	
-	<br/><br/>
-	
-	<c:set var="user" value="${sessionScope.user}"/>
-	<b>Hello <c:out value="${user.firstName}"/>, you are now logged in...</b>
-	<b>What would like to do?</b>
-	
-	<br/><br/>
-	
-	<form action="FrontController" method="post">
-	     <input type="hidden" name="action" value="ListUsers" />
-         <input type="submit" value="List Users" />
-    </form>
-    <form action="FrontController" method="post">
-	     <input type="hidden" name="action" value="ListProducts" />
-         <input type="submit" value="List all products" />
-    </form>         
+<body>
+	<div id = "container">
+		<h1>Welcome</h1>
 		
+		<br/><br/>
+		
+		<c:set var="user" value="${sessionScope.user}"/>
+		<b>Hello <c:out value="${user.firstName}"/>, you are now logged in...</b>
+		<b>What would like to do?</b>
+		
+		<br/><br/>
+		
+		<form action="FrontController" method="post">
+		     <input type="hidden" name="action" value="ListUsers" />
+	         <input type="submit" value="List Users" />
+	    </form>
+	    
+	    <br/><br/>
+	    
+	    <form action="FrontController" method="post">
+		     <input type="hidden" name="action" value="ListProducts" />
+	         <input type="submit" value="View Products" />
+	    </form> 
+	</div>        		
 </body>
 
 </html>
