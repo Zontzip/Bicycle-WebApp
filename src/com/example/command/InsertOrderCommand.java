@@ -28,7 +28,7 @@ public class InsertOrderCommand implements Command {
 		String forwardToJsp = "";
 		customer = (Customer) (request.getSession().getAttribute("customer"));
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date now = new Date();
 		String strDate = sdf.format(now);
 		
