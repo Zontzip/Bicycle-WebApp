@@ -58,12 +58,12 @@
 		<table>
 			<tr>
 			<td><b>Product Quantity</b></td>
-			<td><b>Customer Id</b></td>
+			<td><b>Order Id</b></td>
 			<td><b>Product Id</b></td>
 			</tr>
 		<%
 		List<CartItem> cartItems;
-		cartItems = (List)(request.getSession().getAttribute("cartitems"));
+		cartItems = (List)(request.getSession().getAttribute("getcartitems"));
 		
 		if (cartItems != null){
 		
