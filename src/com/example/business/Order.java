@@ -8,8 +8,10 @@ public class Order {
 	String orderDate;
 	String orderStatus;
 	
-	public Order(Customer customer) {
-		setCustomer(customer);
+	public Order(int customerId, String orderDate, String orderStatus) {
+		setCustomerId(customerId);
+		setOrderDate(orderDate);
+		setOrderStatus(orderStatus);
 	}
 	
 	public Order(int orderId, int customerId, String orderDate, String orderStatus) {

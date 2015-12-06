@@ -21,4 +21,13 @@ public class OrderService {
 		}
 		return orders;
 	}
+	
+	public void insertOrder(Order order) {
+		try {
+			dao.insertOrder(order);
+		} 
+		catch (DaoException e) {
+			e.printStackTrace();
+		}
+	}
 }

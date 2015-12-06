@@ -52,4 +52,39 @@ public class OrderDao extends Dao {
         
 		return orders;
 	}
+	
+	public void insertOrder(Order order) throws DaoException {
+
+		Connection con = null;
+        PreparedStatement ps = null;
+        
+        int customerId = 1;
+        String orderDate = order.getOrderDate();
+        String orderStatus = order.getOrderStatus();
+       
+        try {
+        	con = this.getConnection();
+        	
+        	String query = "INSERT INTO ORDERS(CUSTOMER_ID, ORDER_DATE, ORDER_STATUS) VALUES (?, ?, ?)";
+        	ps = con.prepareStatement(query);
+            ps.setInt(1, customerId);
+            ps.setString(2, orderDate);
+            ps.setString(3, orderStatus);
+        	
+        	ps.executeUpdate();
+        } catch (SQLException e) {
+        	throw new DaoException();
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+                    freeConnection(con);
+                }
+            } catch (SQLException e) {
+                throw new DaoException("InsertOrder" + e.getMessage());
+            }
+        }
+	}
 }

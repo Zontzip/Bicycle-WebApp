@@ -7,8 +7,8 @@ CREATE TABLE IF NOT EXISTS `Customers` (
   `Customer_Id` int(11) NOT NULL AUTO_INCREMENT,
   `First_Name` varchar(50) NOT NULL,
   `Last_Name` varchar(50) NOT NULL,
-  `Username` varchar(20) NOT NULL,
-  `Password` varchar(20) NOT NULL,
+  `Username` varchar(20) ,
+  `Password` varchar(20) ,
   PRIMARY KEY (`Customer_Id`)
   );
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `CartItems` (
   );
 
 INSERT INTO Customers VALUES 
-  (null, "Alex",  "Kiernan",  "admin",  "pass"),
+  (null, "Alex",  "Kiernan",  "",  ""),
   (null, "Rian",  "Jolley",   "jolz",   "pass"),
   (null, "Abdul", "Hakeem",   "dollah", "pass"),
   (null, "Greg",  "Gietka",   "coder",  "pass");

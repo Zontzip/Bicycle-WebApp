@@ -26,6 +26,12 @@
 		<hr style="clear:both;"/>
 		
 		<table>
+			<tr>
+			<td><b>Order Id</b></td>
+			<td><b>Customer Id</b></td>
+			<td><b>Date</b></td>
+			<td><b>Status</b></td>
+			</tr>
 		<%
 		List<Order> orders;
 		orders = (List)(request.getSession().getAttribute("orders"));
