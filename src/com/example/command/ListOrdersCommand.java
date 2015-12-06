@@ -30,7 +30,7 @@ public class ListOrdersCommand implements Command {
 			session.setAttribute("orders", orders);
 			session.setAttribute("cartitems", cartItems);
 			
-			forwardToJsp = "/loginSuccess.jsp";
+			forwardToJsp = "/listOrders.jsp";
 		} else {
 			forwardToJsp = "/errorPage.jsp";	
 		}
