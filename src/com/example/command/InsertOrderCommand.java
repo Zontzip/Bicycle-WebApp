@@ -1,9 +1,7 @@
 package com.example.command;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,7 +31,7 @@ public class InsertOrderCommand implements Command {
 		
 		ShoppingCart shoppingCart = (ShoppingCart) customer.getShoppingCart();
 		cartItems = (List<CartItem>) shoppingCart.cartContents();
-		shoppingCart.cartContents();
+		shoppingCart.emptycart();
 		
 		cartItemService.insertCartItems(cartItems);
 		
