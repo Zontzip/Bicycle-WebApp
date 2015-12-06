@@ -93,6 +93,7 @@
 			</table>
 			<br><b>Total price: </b><%=shoppingCart.cartTotal()%> Euro
 		</div>
+		<br>
 		<form action="FrontController" method="post">
 		   	<input type="hidden" name="action" value="InsertOrder" />	  	   
 			<input type="submit" value="Order" />
