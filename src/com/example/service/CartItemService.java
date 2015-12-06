@@ -21,4 +21,14 @@ public class CartItemService {
 		}
 		return cartItems;
 	}
+	
+	public void insertCartItems(List<CartItem> cartItems) {
+		
+		try {
+			dao.insertCartItems(cartItems);
+		} 
+		catch (DaoException e) {
+			e.printStackTrace();
+		}
+	}
 }

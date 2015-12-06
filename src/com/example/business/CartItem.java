@@ -12,6 +12,8 @@ public class CartItem {
 		setCustomer(customer);
 		setProduct(product);
 		setProductQuantity(productQuantity);
+		setOrderId(customer.getId());
+		setProductId(product.getProductId());
 	}
 	
 	public CartItem(int customerId, int productId, int productQuantity) {

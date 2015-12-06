@@ -50,4 +50,42 @@ public class CartItemDao extends Dao {
         
 		return cartItems;
 	}
+	
+	public void insertCartItems(List<CartItem> cartItems) throws DaoException {
+
+		Connection con = null;
+        PreparedStatement ps = null;
+        
+        for (CartItem ci : cartItems) {
+        
+	        int orderId = ci.getOrderId();
+	        int productCode = ci.getProductId();
+	        int productQuantity = ci.getProductQuantity();
+	       
+	        try {
+	        	con = this.getConnection();
+	        	
+	        	String query = "INSERT INTO CARTITEMS VALUES (?, ?, ?)";
+	        	ps = con.prepareStatement(query);
+	            ps.setInt(1, orderId);
+	            ps.setInt(2, productCode);
+	            ps.setInt(3, productQuantity);
+	        	
+	        	ps.executeUpdate();
+	        } catch (SQLException e) {
+	        	throw new DaoException();
+	        } finally {
+	            try {
+	                if (ps != null) {
+	                    ps.close();
+	                }
+	                if (con != null) {
+	                    freeConnection(con);
+	                }
+	            } catch (SQLException e) {
+	                throw new DaoException("insertCartItems" + e.getMessage());
+	            }
+	        }
+        }
+	}
 }
