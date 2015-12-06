@@ -59,11 +59,9 @@ public class OrderDao extends Dao {
         PreparedStatement ps = null;
         
         int orderId = order.getOrderId();
-        int customerId = 1;
+        int customerId = order.getCustomerId();
         String orderDate = order.getOrderDate();
         String orderStatus = order.getOrderStatus();
-        
-        System.out.println(orderStatus);
        
         try {
         	con = this.getConnection();

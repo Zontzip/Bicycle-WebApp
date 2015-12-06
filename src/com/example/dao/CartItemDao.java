@@ -12,7 +12,7 @@ import com.example.exceptions.DaoException;
 
 public class CartItemDao extends Dao {
 	public List<CartItem> getAllCartItems() throws DaoException {
-		
+		System.out.println("Attempting to add item");
 		Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;

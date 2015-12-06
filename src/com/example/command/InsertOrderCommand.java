@@ -28,14 +28,15 @@ public class InsertOrderCommand implements Command {
 		
 		order = customer.getOrder();
 		orderService.insertOrder(order);
+		order = new Order(customer);
+		customer.setOrder(order);
 		
 		ShoppingCart shoppingCart = (ShoppingCart) customer.getShoppingCart();
 		cartItems = (List<CartItem>) shoppingCart.cartContents();
+		cartItemService.insertCartItems(cartItems);
 		shoppingCart.emptycart();
 		
-		cartItemService.insertCartItems(cartItems);
-		
-		forwardToJsp = "/listOrders.jsp";
+		forwardToJsp = "/loginSuccess.jsp";
 		return forwardToJsp;
 	}
 
