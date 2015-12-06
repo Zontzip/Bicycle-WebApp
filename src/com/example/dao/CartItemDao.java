@@ -21,7 +21,6 @@ public class CartItemDao extends Dao {
         	con = this.getConnection();
         	String query = "SELECT * FROM cartitems";
         	ps = con.prepareStatement(query);
-        	System.out.println("Added cart item");
         	
         	rs = ps.executeQuery();
         	while (rs.next()) {

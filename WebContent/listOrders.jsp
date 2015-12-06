@@ -63,7 +63,7 @@
 			</tr>
 		<%
 		List<CartItem> cartItems;
-		cartItems = (List)(request.getSession().getAttribute("getcartitems"));
+		cartItems = (List)(request.getSession().getAttribute("cartitems"));
 		
 		if (cartItems != null){
 		
