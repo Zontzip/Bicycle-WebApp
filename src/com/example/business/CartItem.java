@@ -1,18 +1,18 @@
 package com.example.business;
 
 public class CartItem {
-	Customer customer;
+	Order order;
 	Product product;
 	int orderId;
 	int productId;
 	
 	private int productQuantity;
 	
-	public CartItem(Customer customer, Product product, int productQuantity) {
-		setCustomer(customer);
+	public CartItem(Order order, Product product, int productQuantity) {
+		setOrder(order);
 		setProduct(product);
 		setProductQuantity(productQuantity);
-		setOrderId(customer.getId());
+		setOrderId(order.getOrderId());
 		setProductId(product.getProductId());
 	}
 	
@@ -21,13 +21,13 @@ public class CartItem {
 		setProductId(productId);
 		setProductQuantity(productQuantity);
 	}
-	
-	public Customer getCustomer() {
-		return customer;
+
+	public Order getOrder() {
+		return order;
 	}
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 
 	public Product getProduct() {

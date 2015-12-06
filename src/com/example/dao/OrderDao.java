@@ -58,18 +58,22 @@ public class OrderDao extends Dao {
 		Connection con = null;
         PreparedStatement ps = null;
         
+        int orderId = order.getOrderId();
         int customerId = 1;
         String orderDate = order.getOrderDate();
         String orderStatus = order.getOrderStatus();
+        
+        System.out.println(orderStatus);
        
         try {
         	con = this.getConnection();
         	
-        	String query = "INSERT INTO ORDERS(CUSTOMER_ID, ORDER_DATE, ORDER_STATUS) VALUES (?, ?, ?)";
+        	String query = "INSERT INTO ORDERS VALUES (?, ?, ?, ?)";
         	ps = con.prepareStatement(query);
-            ps.setInt(1, customerId);
-            ps.setString(2, orderDate);
-            ps.setString(3, orderStatus);
+        	ps.setInt(1, orderId);
+            ps.setInt(2, customerId);
+            ps.setString(3, orderDate);
+            ps.setString(4, orderStatus);
         	
         	ps.executeUpdate();
         } catch (SQLException e) {

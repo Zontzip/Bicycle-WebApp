@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `Products` (
   );
 
 CREATE TABLE IF NOT EXISTS `Orders` (
-  `Order_Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Order_Id` int(11) NOT NULL,
   `Customer_Id` int(11) NOT NULL,
   `Order_Date` varchar(10) NOT NULL,
   `Order_Status` varchar(10) NOT NULL,

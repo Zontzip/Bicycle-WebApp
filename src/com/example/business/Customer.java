@@ -2,6 +2,7 @@ package com.example.business;
 
 public class Customer {
 	private ShoppingCart shoppingCart = new ShoppingCart(this);
+	private Order order = new Order(this);
 
 	private int id;
 	private String firstName;
@@ -61,5 +62,17 @@ public class Customer {
 	
 	public ShoppingCart getShoppingCart() {
 		return this.shoppingCart;
+	}
+
+	public void setShoppingCart(ShoppingCart shoppingCart) {
+		this.shoppingCart = shoppingCart;
+	}
+	
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 }

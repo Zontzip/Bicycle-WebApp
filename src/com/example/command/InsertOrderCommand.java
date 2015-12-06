@@ -28,15 +28,12 @@ public class InsertOrderCommand implements Command {
 		String forwardToJsp = "";
 		customer = (Customer) (request.getSession().getAttribute("customer"));
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		Date now = new Date();
-		String strDate = sdf.format(now);
-		
-		order = new Order(customer.getId(), strDate, "New");
+		order = customer.getOrder();
 		orderService.insertOrder(order);
 		
 		ShoppingCart shoppingCart = (ShoppingCart) customer.getShoppingCart();
 		cartItems = (List<CartItem>) shoppingCart.cartContents();
+		shoppingCart.cartContents();
 		
 		cartItemService.insertCartItems(cartItems);
 		

@@ -1,32 +1,29 @@
 package com.example.business;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
+
 public class Order {
-	Customer customer;
-	
 	int orderId;
 	int customerId;
 	String orderDate;
 	String orderStatus;
 	
-	public Order(int customerId, String orderDate, String orderStatus) {
-		setCustomerId(customerId);
-		setOrderDate(orderDate);
-		setOrderStatus(orderStatus);
+	// Creating a local order
+	public Order(Customer customer) {
+		setNewOrderId();
+		setCustomerId(customer.getId());
+		setTodaysDate();
+		setNewStatus();
 	}
 	
+	// DAO order
 	public Order(int orderId, int customerId, String orderDate, String orderStatus) {
 		setOrderId(orderId);
 		setCustomerId(customerId);
 		setOrderDate(orderDate);
 		setOrderStatus(orderStatus);
-	}
-	
-	public Customer getCustomer() {
-		return customer;
-	}
-	
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
 	}
 	
 	public int getOrderId() {
@@ -51,6 +48,24 @@ public class Order {
 	
 	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
+	}
+	
+	public void setNewOrderId() {
+		Random rand = new Random();
+		int  n = rand.nextInt(1000) + 1;
+		setOrderId(n);
+	}
+	
+	public void setTodaysDate() {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date now = new Date();
+		String strDate = sdf.format(now);
+		
+		setOrderDate(strDate);
+	}
+	
+	public void setNewStatus() {
+		setOrderStatus("New");
 	}
 	
 	public String getOrderStatus() {

@@ -38,4 +38,8 @@ public class ShoppingCart {
 		}
 		return totalPrice;
 	}
+	
+	public void emptycart() {
+		cartList.clear();
+	}
 }
