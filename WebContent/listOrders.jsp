@@ -8,6 +8,7 @@
 
 <%@ page import="java.util.*" %>
 <%@ page import="com.example.business.Order" %>
+<%@ page import="com.example.business.CartItem" %>
 
 <html>
 
@@ -50,6 +51,35 @@
 		
 		<% 
 		  }
+		}
+		%>
+		</table>
+		
+		<table>
+			<tr>
+			<td><b>Product Quantity</b></td>
+			<td><b>Customer Id</b></td>
+			<td><b>Product Id</b></td>
+			</tr>
+		<%
+		List<CartItem> cartItems;
+		cartItems = (List)(request.getSession().getAttribute("cartitems"));
+		
+		if (cartItems != null){
+		
+		  for (CartItem ci : cartItems){ 
+		%>
+		
+			<tr>
+			  <td><%=ci.getProductQuantity()%></td>
+			  <td><%=ci.getOrderId()%></td>
+			  <td><%=ci.getProductId()%></td>
+			</tr>
+		
+		<% 
+		  }
+		} else {
+			System.out.println("No items added");
 		}
 		%>
 		</table>

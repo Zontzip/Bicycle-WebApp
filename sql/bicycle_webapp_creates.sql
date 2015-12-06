@@ -30,9 +30,9 @@ CREATE TABLE IF NOT EXISTS `Orders` (
   );
 
 CREATE TABLE IF NOT EXISTS `CartItems` (
-  `Product_Quantity` int(10) NOT NULL,
   `Order_Id` int(11) NOT NULL,
   `Product_Code` int(11) NOT NULL,
+  `Product_Quantity` int(10) NOT NULL,
   FOREIGN KEY (`Order_Id`) REFERENCES Orders(`Order_Id`),
   FOREIGN KEY (`Product_Code`) REFERENCES Products(`Product_Code`)
   );
@@ -50,4 +50,7 @@ INSERT INTO Products VALUES
   (null, "Shimano Pedals", "Japanese made pedals for increased efficiency", 20);
 
 INSERT INTO Orders VALUES
-  (null, 1, "5-12-2015", "Completed");
+  (null, 1, "2015-12-05", "Completed");
+
+INSERT INTO CartItems VALUES
+  (1, 1, 2);

@@ -40,6 +40,7 @@
 	    <br/><br/>
 	    
 	    <form action="FrontController" method="post">
+			 <input type="hidden" name="action" value="ListCartItems" />
 		     <input type="hidden" name="action" value="ListOrders" />
 	         <input type="submit" value="View Orders" />
 	    </form> 
