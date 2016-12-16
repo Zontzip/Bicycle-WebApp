@@ -3,4 +3,4 @@ A web storefront for a bicycle shop written in Java and utilising JSP. Users can
 
 Examples of design patterns include singleton, simple factory, DAO and context object.
 
-![alt tag]()
+![alt tag](https://github.com/Zontzor/Bicycle-WebApp/blob/master/images/class_diagram.PNG)
